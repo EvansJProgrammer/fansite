@@ -1,90 +1,82 @@
-React Field Agent Assessment
-Tasks
-TODO Add time estimates to each of the top-level tasks
+# Fans!
 
- Create a new GitHub repo for this assessment or continue working in the repo from last week's Field Agent API repository (#.# hours)
+Use React to create a fansite for your team's current obsession. If you don't share an obsession, a slightly-less-than-obsession compromise is just fine.
 
- When creating your repo, be sure to add a .gitignore file using the GitHub Node template
- Update the README with the contents from this file
- Add the instruction team as collaborators
- Review the requirements (#.# hours)
+**Examples**
 
- Identify any research that I need to do (#.# hours)
+- https://thejeopardyfan.com/
+- https://violetbeauregardefansite.weebly.com/
+- https://prince.org/
+- http://ponylandpress.com/
 
-Part 1: Project Setup and Agents List
- Create a new React project with CRA (create-react-app)
+Fansites are diverse. There's no common set of features. That means your team has a lot of latitude in the design and implementation of your fansite. There is no official specification. Work together to decide what should be included.
 
- Remove the cruft (refer back to the Components and JSX exercise for instructions)
- Add Bootstrap to the public/index.html file
+The examples above are likely too large to implement in a week, so be aware of your limitations. If your ambitions are large, prioritize your features so you can deliver features in order.
 
- Add a link to the Bootstrap CSS using the CDN from the official docs
- Add the container CSS class to the <div id="root"></div> element
- Create Agents component (stub)
+## Goals
 
- Update App component to render Agents
- Update Agents to render list of agents
+- Coordinate tasks across a team.
+- Practice using Git with a team.
+- More and different React practice.
+- Effective navigation in a React application.
+- Focus on visual content: images, CSS, video.
+- Use varied data strategies.
 
- Use fetch to GET a list of agents from the Field Agent API when the component is first loaded
- Write JSX to render the agents array
- Stub out click event handlers ("Add Agent", "Edit Agent", "Delete Agent") as necessary
-Make sure that my GitHub repo is updated!
+### Data Strategies
 
-Part 2: Add Agent and Delete Agent
- Create a form to add an agent
+Use at least three of the four data strategies below. The static strategy and at least one database entity are required.
 
- Add form JSX
- Decide between using individual state variables for input elements or a single object
- Add onChange event handlers to input elements
- Add onSubmit event handler to form element (be sure to prevent the form from submitting!)
- Create agent object
- Use fetch to POST the new agent's information to the Field Agent API
- On success, update the agents array (don't modify the original array!), or on failure, display any validation errors from the API in the UI
- Support deleting agents
+1. Static: embed content/data directly into a component. Static content is sometimes used in "contact us" views, "about us" views, legal privacy notices, etc.
 
- Store the "delete agent ID" in a new state variable
- Retrieve the agent to delete
- Update form state variable(s)
- Add delete confirmation JSX
- Add button click handler to perform the delete
- Use fetch to DELETE the agent from the Field Agent API
- On success, update the agents array (don't modify the original array!)
- Conditionally render sections of the component
+2. Public APIs: Github has a large list of [public APIs](https://github.com/public-apis/public-apis), but don't feel limited to the list. There are many more. For any API you choose, you'll need to learn how to use it. Some APIs require an access key, some don't. Some support CORS, some don't. Some require registration, some don't. Your team will need to research, prototype, and determine if it's something you can work with.
 
- Add state variable to track the current view
- Add conditional logic to the JSX to display the appropriate view
-Make sure that my GitHub repo is updated!
+3. Lightweight, auto-generated APIs: one example is [json-server](https://github.com/typicode/json-server).
 
-Part 3: Edit Agent
- Support editing agents
+4. A database-backed Java, Spring Boot/MVC API
 
- Store the "edit agent ID" in a new state variable
- Retrieve the agent to edit
- Update form state variable(s)
- Add form JSX
- Add onChange event handlers to input elements
- Add onSubmit event handler to form element (be sure to prevent the form from submitting!)
- Create agent object
- Use fetch to PUT the updated agent's information to the Field Agent API
- On success, update the agents array (don't modify the original array!), or on failure, display any validation errors from the API in the UI
- Apply Bootstrap styling (as needed)
+### Navigation
 
- Update the agents list
- Update the add agent form
- Update the edit agent form
- Update the delete agent confirmation
- Use the provided test plan to manually test the application
+Fansites aren't known for their elegant navigation and user experience. They're labors of love. We want to change that perception.
 
-Make sure that my GitHub repo is updated!
+Your fansite will have several views. Consider how best to navigate to those views, including sub-navigation within a particular view. Make it nice.
 
-High-Level Requirements
-Implement a full CRUD UI for agents.
+React Router may help.
 
-Display all agents
-Add an agent
-Update an agent
-Delete an agent
-Technical Requirements
-Use Create React App
-Use fetch for async HTTP
-You are not allowed to change the Field Agent HTTP Service or database (unless there's a confirmed bug and your instructor approves)
-Use a CSS framework
+### Images, CSS, Effects, and Video
+
+Fansites are more fun when they're visually stimulating. Make your UI fun with images, CSS transitions and effects, and video.
+
+Images can be stored locally in the `public` directory, embedded directly as a resource using `create-react-app`, or referenced as an absolute URI.
+
+Push your UI further with CSS framework components that include transitions and effects. Sample components: image carousels, modal dialogs, and ["toast"](https://css-tricks.com/toast/).
+
+Also consider using a framework other than Bootstrap or try tackling more of your own CSS if it's of interest.
+
+- https://getbootstrap.com/
+- https://tailwindcss.com/
+- https://bulma.io/
+
+YouTube, Vimeo, and others can be embedded into React components. Smaller videos (don't commit and push large files to Github) can be embedded directly with the `<video>` tag.
+
+## Approach
+
+1. One person creates a new Github repository.
+
+2. Add an appropriate `.gitignore` file. Your `.gitignore` should account for JavaScript and Java artifacts.
+
+3. Add your teammates and instructors as collaborators.
+
+4. Work through ideas and define scope. We will have one full day and five half days of work. Decide what you can tackle.
+
+5. You'll need a strategy to coordinate work. At first, it may be best to code together to rough out the foundation. Then teammates can work independently. Another approach is to partition out horizontal layers. One teammate can work on the back-end Java API (required) while other start on the front-end.
+
+## Technical Requirements
+
+- Use React Router in your React UI.
+- database-backed Java, Spring Boot/MVC API
+- the "static" data strategy
+- Your choice of: a public API or an auto-generated API.
+
+## If Time Allows
+
+Looking ahead to next week, consider adding security to both your Java API and React fansite.
