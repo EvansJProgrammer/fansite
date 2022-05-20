@@ -1,6 +1,8 @@
 package learn.taylor_swift.controllers;
 
 
+import learn.taylor_swift.domain.Result;
+import learn.taylor_swift.domain.ResultType;
 import learn.taylor_swift.models.*;
 import learn.taylor_swift.data.*;
 import learn.taylor_swift.models.*;
