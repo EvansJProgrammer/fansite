@@ -18,6 +18,10 @@ public class SongService {
     return repository.findAll();
   }
 
+  public Song findById(int id) {
+    return repository.findById(id);
+  }
+
 
 
   public Result<Song> add(Song song) {

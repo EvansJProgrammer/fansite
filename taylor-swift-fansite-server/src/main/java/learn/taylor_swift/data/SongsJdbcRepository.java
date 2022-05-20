@@ -28,6 +28,20 @@ public class SongsJdbcRepository implements SongsRepository {
     }
 
     @Override
+    public Song findById(int id) {
+
+        final String sql = "select id, title, length, youTubeUrl, spotifyUrl, releaseYear "
+                + "from song "
+                + "where id = ?;";
+
+        Song song = jdbcTemplate.query(sql, new SongMapper(), id).stream()
+                .findFirst().orElse(null);
+
+
+        return song;
+    }
+
+    @Override
     public Song add(Song song) {
         final String sql = "insert into song (title, length, youTubeUrl, spotifyUrl, releaseYear) values (?,?,?,?,?);";
 

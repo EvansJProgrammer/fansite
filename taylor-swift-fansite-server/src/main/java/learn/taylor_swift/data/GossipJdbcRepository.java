@@ -4,8 +4,12 @@ import learn.taylor_swift.data.mappers.GossipMapper;
 import learn.taylor_swift.data.mappers.SongMapper;
 import learn.taylor_swift.models.*;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.List;
 
 @Repository
@@ -25,13 +29,23 @@ public class GossipJdbcRepository implements GossipRepository {
     }
 
     @Override
-    public int add(Gossip gossip) {
+    public Gossip add(Gossip gossip) {
 
         final String sql = "insert into gossip (id, deets) values (?,?);";
 
-        return jdbcTemplate.update(sql,
-                gossip.getId(),
-                gossip.getDeets());
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        int rowsAffected = jdbcTemplate.update(connection -> {
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, gossip.getDeets());
+            return ps;
+        }, keyHolder);
+
+        if (rowsAffected <= 0) {
+            return null;
+        }
+
+        gossip.setId(keyHolder.getKey().intValue());
+        return gossip;
     }
 
     @Override

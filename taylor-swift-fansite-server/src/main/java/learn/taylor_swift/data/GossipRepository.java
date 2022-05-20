@@ -8,7 +8,7 @@ public interface GossipRepository {
 
 
     List<Gossip> findAll();
-    int add(Gossip gossip);
+    Gossip add(Gossip gossip);
 
     boolean update(Gossip gossip);
 

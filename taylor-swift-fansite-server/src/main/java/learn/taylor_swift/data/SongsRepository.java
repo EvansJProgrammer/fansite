@@ -16,4 +16,5 @@ public interface SongsRepository {
     boolean deleteById(int id);
 
 
+    Song findById(int id);
 }
