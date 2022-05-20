@@ -1,14 +1,14 @@
 package learn.taylor_swift.models;
 
-public class Songs {
+public class Song {
     private int id;
     private String title;
-    private int length;
+    private String length;
     private String youTubeUrl;
     private String spotifyUrl;
     private int releaseYear;
 
-    public Songs(int id, String title, int length, String youTubeUrl, String spotifyUrl, int releaseYear) {
+    public Song(int id, String title, String length, String youTubeUrl, String spotifyUrl, int releaseYear) {
         this.id = id;
         this.title = title;
         this.length = length;
@@ -17,11 +17,11 @@ public class Songs {
         this.releaseYear = releaseYear;
     }
 
-    public Songs() {
+    public Song() {
 
     }
 
-    public Songs(String id, String title, int length, String youTubeUrl, String spotifyUrl, int releaseYear){
+    public Song(String id, String title, int length, String youTubeUrl, String spotifyUrl, int releaseYear){
 
     }
     public int getId() {
@@ -40,11 +40,11 @@ public class Songs {
         this.title = title;
     }
 
-    public int getLength() {
+    public String getLength() {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setLength(String length) {
         this.length = length;
     }
 
