@@ -1,2 +1,7 @@
-package learn.taylor_swift.domain;public class ResultType {
+package learn.taylor_swift.domain;
+
+public enum ResultType {
+    SUCCESS,
+    INVALID,
+    NOT_FOUND
 }
