@@ -28,7 +28,7 @@ public class SongsJdbcRepository implements SongsRepository {
     }
 
     @Override
-    public Song Add(Song song) {
+    public Song add(Song song) {
         final String sql = "insert into song (title, length, youTubeUrl, spotifyUrl, releaseYear) values (?,?,?,?,?);";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();

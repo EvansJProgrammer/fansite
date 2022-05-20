@@ -9,7 +9,7 @@ public interface SongsRepository {
 
     List<Song> findAll();
 
-    Song Add(Song song);
+    Song add(Song song);
 
     boolean update(Song song);
 

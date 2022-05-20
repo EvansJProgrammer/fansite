@@ -31,7 +31,7 @@ public class SongService {
       return result;
     }
 
-    song = repository.Add(song);
+    song = repository.add(song);
     result.setPayload(song);
     return result;
   }
@@ -57,5 +57,30 @@ public class SongService {
 
     return result;
   }
+
+  public Result<Song> update(Song song) {
+    Result<Song> result = validate(song);
+    if (!result.isSuccess()) {
+      return result;
+    }
+
+    if (song.getId() <= 0) {
+      result.addMessage("id must be set for `update` operation", ResultType.INVALID);
+      return result;
+    }
+
+    if (!repository.update(song)) {
+      String msg = String.format("agencyId: %s, not found", song.getId());
+      result.addMessage(msg, ResultType.NOT_FOUND);
+    }
+
+    return result;
+  }
+
+  public boolean deleteById(int id) {
+    return repository.deleteById(id);
+  }
+
+
 
 }

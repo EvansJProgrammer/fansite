@@ -1,8 +1,12 @@
 package learn.taylor_swift.data;
 
+import learn.taylor_swift.data.mappers.GossipMapper;
+import learn.taylor_swift.data.mappers.SongMapper;
 import learn.taylor_swift.models.*;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class GossipJdbcRepository implements GossipRepository {
@@ -11,6 +15,13 @@ public class GossipJdbcRepository implements GossipRepository {
 
     public GossipJdbcRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+    }
+
+
+    @Override
+    public List<Gossip> findAll() {
+        final String sql = "select * from gossip";
+        return jdbcTemplate.query(sql, new GossipMapper());
     }
 
     @Override
