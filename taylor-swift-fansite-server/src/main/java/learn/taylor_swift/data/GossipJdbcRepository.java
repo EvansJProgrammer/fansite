@@ -31,7 +31,7 @@ public class GossipJdbcRepository implements GossipRepository {
     @Override
     public Gossip add(Gossip gossip) {
 
-        final String sql = "insert into gossip (id, deets) values (?,?);";
+        final String sql = "insert into gossip (deets) values (?);";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
         int rowsAffected = jdbcTemplate.update(connection -> {
