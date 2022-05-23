@@ -52,20 +52,18 @@ public class GossipJdbcRepository implements GossipRepository {
     public boolean update(Gossip gossip) {
 
         final String sql = "update gossip set "
-                + "id = ?, "
-                + "deets = ? ";
+                + "deets = ? where id = ? ";
 
         return jdbcTemplate.update(sql,
-                gossip.getId(),
-                gossip.getDeets()) > 0;
+                gossip.getDeets(),
+                gossip.getId()) > 0;
+
     }
 
     @Override
     public boolean deleteByKey(int id) {
 
-        final String sql = "delete from id"
-                + "where id = ?;";
-
+        final String sql = "delete from gossip where id = ?;";
         return jdbcTemplate.update(sql, id) > 0;
     }
 

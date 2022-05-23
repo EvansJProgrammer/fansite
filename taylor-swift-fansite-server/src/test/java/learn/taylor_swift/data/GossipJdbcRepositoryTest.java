@@ -1,20 +1,20 @@
 package learn.taylor_swift.data;
 
+import learn.taylor_swift.data.GossipJdbcRepository;
 import learn.taylor_swift.models.Gossip;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
-class GossipJdbcRepositoryTest {
+class  GossipJdbcRepositoryTest {
 
-    final static int NEXT_ID = 9;
+    final static int NEXT_ID = 3;
 
     @Autowired
     GossipJdbcRepository repository;
@@ -31,37 +31,37 @@ class GossipJdbcRepositoryTest {
     void shouldFindAll() {
         List<Gossip> gossip = repository.findAll();
         assertNotNull(gossip);
-        assertTrue(gossip.size() >= 7 && gossip.size() <= 10);
+        assertTrue(gossip.size() >= 1 && gossip.size() <= 3);
     }
 
     @Test
     void shouldAdd() {
         // all fields
-        Gossip agent = makeGossip();
-        Gossip actual = repository.add(agent);
+        Gossip gossip = makeGossip();
+        Gossip actual = repository.add(gossip);
         assertNotNull(actual);
         assertEquals(NEXT_ID, actual.getId());
 
         // null dob
-        agent = makeGossip();
-        actual = repository.add(agent);
+        gossip = makeGossip();
+        actual = repository.add(gossip);
         assertNotNull(actual);
-        assertEquals(NEXT_ID + 1, actual.getId());
+        assertEquals(NEXT_ID +  1, actual.getId());
     }
 
     @Test
     void shouldUpdate() {
         Gossip gossip = makeGossip();
-        gossip.setId(3);
-        assertTrue(repository.update(gossip));
+        gossip.setId(10);
+        assertFalse(repository.update(gossip));
         gossip.setId(13);
         assertFalse(repository.update(gossip));
     }
 
     @Test
     void shouldDelete() {
-        assertTrue(repository.deleteByKey(2));
-        assertFalse(repository.deleteByKey(2));
+        assertTrue(repository.deleteByKey(1));
+        assertFalse(repository.deleteByKey(1));
     }
 
     private Gossip makeGossip() {
