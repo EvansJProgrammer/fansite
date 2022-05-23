@@ -75,5 +75,14 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>temporaryrepo</id>-->
+<!--            <url>https://repo.maven.apache.org/maven2</url>-->
+<!--            <layout>default</layout>-->
+
+<!--        </repository>-->
+
+<!--    </repositories>-->
 
 </project>
