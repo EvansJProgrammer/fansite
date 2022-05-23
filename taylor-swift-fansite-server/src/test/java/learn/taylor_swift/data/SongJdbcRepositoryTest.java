@@ -1,4 +1,4 @@
-package data;
+package learn.taylor_swift.data;
 
 public class SongJdbcRepositoryTest {
 }
