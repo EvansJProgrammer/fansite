@@ -1,23 +1,14 @@
 package learn.taylor_swift.data;
 
-import learn.taylor_swift.data.KnownGoodState;
-import learn.taylor_swift.data.SongsJdbcRepository;
-import learn.taylor_swift.models.Gossip;
-import learn.taylor_swift.data.SongsRepository;
+
 import learn.taylor_swift.models.Song;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.dao.DataAccessException;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.function.BooleanSupplier;
 
-import static com.jayway.jsonpath.internal.path.PathCompiler.fail;
-//import static org.junit.jupiter.api.AssertTrue.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest. WebEnvironment.NONE)
 public class SongJdbcRepositoryTest {
