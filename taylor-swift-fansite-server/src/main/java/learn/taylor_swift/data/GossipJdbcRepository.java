@@ -65,7 +65,6 @@ public class GossipJdbcRepository implements GossipRepository {
     public boolean deleteByKey(int id) {
 
         final String sql = "delete from gossip where id = ?;";
- (Gossip Service test)
         return jdbcTemplate.update(sql, id) > 0;
     }
 

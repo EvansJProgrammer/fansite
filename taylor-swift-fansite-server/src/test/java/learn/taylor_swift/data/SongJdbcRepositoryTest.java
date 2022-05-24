@@ -19,8 +19,6 @@ import java.util.function.BooleanSupplier;
 import static com.jayway.jsonpath.internal.path.PathCompiler.fail;
 //import static org.junit.jupiter.api.AssertTrue.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.skyscreamer.jsonassert.JSONAssert.assertEquals;
-
 @SpringBootTest(webEnvironment = SpringBootTest. WebEnvironment.NONE)
 public class SongJdbcRepositoryTest {
 
@@ -50,12 +48,12 @@ public class SongJdbcRepositoryTest {
         Song song = makeSong();
         Song actual = repository.add(song);
         assertNotNull(actual);
-        Assertions.assertEquals(NEXT_ID, actual.getId());
+        assertEquals(NEXT_ID + 1, actual.getId());
 
         song = makeSong ();
         actual = repository.add(song);
         assertNotNull(actual);
-        Assertions.assertEquals(NEXT_ID +  1, actual.getId());
+        assertEquals(NEXT_ID + 2, actual.getId());
     }
 
     @Test
@@ -76,20 +74,21 @@ public class SongJdbcRepositoryTest {
 
     @Test
     void shouldFindById() {
-        Song song = makeSong();
-        song.setId(10);
-        assertFalse((BooleanSupplier) repository.findById(1));
-        assertFalse((BooleanSupplier) repository.findById(2));
+        Song  song = repository.findById(1);
+        assertEquals(1, song.getId());
+        assertEquals("Bad Blood", song.getTitle());
     }
+
+
 
     private Song makeSong() {
         Song song = new Song();
         song.setId(1);
         song.setTitle("Test");
         song.setLength("Test");
-        song.setReleaseYear(1);
         song.setYouTubeUrl("Test");
         song.setSpotifyUrl("Test");
+        song.setReleaseYear(1995);
         return song;
     }
 

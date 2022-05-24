@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
@@ -27,6 +28,7 @@ public class SongsJdbcRepository implements SongsRepository {
         return jdbcTemplate.query(sql, new SongMapper());
     }
 
+    @Transactional
     @Override
     public Song findById(int id) {
 
@@ -66,14 +68,21 @@ public class SongsJdbcRepository implements SongsRepository {
 
     @Override
     public boolean update(Song song) {
-        final String sql = "update song set " + "title = ?, "
+
+        final String sql = "update song set "
+                + "title = ?, "
                 + "length = ?, "
                 + "youTubeUrl = ?, "
                 + "spotifyUrl = ?, "
-                + "releaseYear = ?,"
-                + "where id = ?;";
+                + "releaseYear = ? where id = ?;";
 
-        return jdbcTemplate.update(sql, song.getTitle(), song.getLength(), song.getYouTubeUrl(), song.getSpotifyUrl(), song.getReleaseYear()) > 0;
+        return jdbcTemplate.update(sql,
+                song.getTitle(),
+                song.getLength(),
+                song.getYouTubeUrl(),
+                song.getSpotifyUrl(),
+                song.getReleaseYear(),
+                song.getId()) > 0;
     }
 
     @Override
