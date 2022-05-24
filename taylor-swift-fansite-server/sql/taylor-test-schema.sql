@@ -16,6 +16,15 @@ create table gossip(
     deets varchar(2048) not null
 );
 
+delimiter //
+create procedure set_known_good_state()
+begin
+
+	delete from songs;
+    alter table songs auto_increment = 1;
+    delete from gossip;
+	alter table gossip auto_increment = 1;
+    
 insert into song (title,length,youTubeUrl,spotifyUrl,releaseYear) 
 values
 ("Bad Blood", "3:30", "testUrl.com", "testSpotifyUrl.com",2019),
@@ -25,4 +34,8 @@ values
 insert into gossip (deets)
 values
 ("Taylor wrote Bad Blood about Kim Kardashian"),
-("Taylor dated Taylor Lautner")
+("Taylor dated Taylor Lautner");
+
+end //
+-- 4. Change the statement terminator back to the original.
+delimiter ;
