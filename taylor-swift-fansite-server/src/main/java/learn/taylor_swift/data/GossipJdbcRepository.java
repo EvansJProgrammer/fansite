@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
@@ -64,10 +65,7 @@ public class GossipJdbcRepository implements GossipRepository {
     public boolean deleteByKey(int id) {
 
         final String sql = "delete from gossip where id = ?;";
-<<<<<<< HEAD
-=======
-
->>>>>>> 8340b78 (Gossip Service test)
+ (Gossip Service test)
         return jdbcTemplate.update(sql, id) > 0;
     }
 

@@ -12,9 +12,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
+public
 class  GossipJdbcRepositoryTest {
 
-    final static int NEXT_ID = 3;
+    public final static int NEXT_ID = 3;
 
     @Autowired
     GossipJdbcRepository repository;
