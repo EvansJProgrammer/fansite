@@ -1,7 +1,8 @@
 package learn.taylor_swift.security;
 
-import learn.field_agent.data.AppUserRepository;
-import learn.field_agent.models.AppUser;
+
+import learn.taylor_swift.data.AppUserRepository;
+import learn.taylor_swift.models.AppUser;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
