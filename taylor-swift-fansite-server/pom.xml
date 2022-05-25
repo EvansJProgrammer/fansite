@@ -17,7 +17,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.4.RELEASE</version>
+        <version>2.6.7</version>
         <relativePath/>
     </parent>
 
@@ -94,7 +94,26 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+
         </dependency>
     </dependencies>
+
+     <repositories>
+
+     <repository>
+
+     <id>temporaryrepo</id>
+
+     <url>https://repo.maven.apache.org/maven2</url>
+
+     <layout>default</layout>
+
+
+
+     </repository>
+
+
+
+     </repositories>
 
 </project>
