@@ -22,6 +22,11 @@ public class GossipService {
     return repository.findAll();
   }
 
+  public Gossip findById(int id) {
+    return repository.findById(id);
+  }
+
+
   public Result<Gossip> add(Gossip gossip) {
     Result<Gossip> result = validate(gossip);
     if (!result.isSuccess()) {

@@ -1,4 +1,5 @@
 import NavBar from "./component/Navbar";
+import Home from "./component/Home";
 import Song from "./component/Song";
 import AddSong from "./component/AddSong";
 import UpdateSong from "./component/UpdateSong";
@@ -101,17 +102,6 @@ function App() {
       </AuthContext.Provider>) : null}
     </div>
   );
-}
-
-function Home() {
-  return (
-    <>
-      <h2>Home</h2>
-      <div>
-        <p>This is the anything Taylor Swift Fan Page!.</p>
-      </div>
-    </>
-  )
 }
 
 function About() {

@@ -29,6 +29,19 @@ public class GossipJdbcRepository implements GossipRepository {
         return jdbcTemplate.query(sql, new GossipMapper());
     }
 
+    public Gossip findById(int id) {
+
+        final String sql = "select id, deets "
+                + "from gossip "
+                + "where id = ?;";
+
+        Gossip gossip = jdbcTemplate.query(sql, new GossipMapper(), id).stream()
+                .findFirst().orElse(null);
+
+
+        return gossip;
+    }
+
     @Override
     public Gossip add(Gossip gossip) {
 

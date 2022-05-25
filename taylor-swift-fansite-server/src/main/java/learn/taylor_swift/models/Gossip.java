@@ -5,9 +5,25 @@ public class Gossip {
     private int id;
     private String deets;
 
+    public Gossip() {
+
+    }
+
+    public Gossip(int id, String deets) {
+        this.id = id;
+        this.deets = deets;
+
+    }
+
+    public Gossip(String id, String deets) {
+
+    }
+
     public int getId() {
         return id;
     }
+
+
 
     public void setId(int id) {
         this.id = id;
@@ -22,14 +38,6 @@ public class Gossip {
     }
 
 
-    public Gossip() {
 
-    }
-
-    public Gossip(int id, String deets) {
-        this.id = id;
-        this.deets = deets;
-
-    }
 
 }
