@@ -74,7 +74,7 @@ function App() {
             <Route exact path="/gossips/edit/:id" >
               {authManager.user ? <UpdateGossip />  : <Redirect to="/login" /> }
             </Route>
-            <Route exact path="/songs/delete/:id" >
+            <Route exact path="/gossips/delete/:id" >
               {authManager.hasRole('admin')  ? <DeleteGossip />  : <Redirect to="/login" /> }
             </Route>
 

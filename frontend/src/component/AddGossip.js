@@ -69,7 +69,7 @@ function AddGossip() {
         <div className="form-group">
           <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Add Gossip</button>
           &nbsp;
-          <button className="btn btn-secondary" type="button" onClick={() => history.push('/agents')}>Cancel</button>
+          <button className="btn btn-secondary" type="button" onClick={() => history.push('/gossips')}>Cancel</button>
         </div>
       </form>
       <Errors errors={errors}/>
