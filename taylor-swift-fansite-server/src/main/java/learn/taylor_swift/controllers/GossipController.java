@@ -3,6 +3,7 @@ package learn.taylor_swift.controllers;
 import learn.taylor_swift.domain.GossipService;
 import learn.taylor_swift.domain.Result;
 import learn.taylor_swift.models.Gossip;
+import learn.taylor_swift.models.Song;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,10 @@ public class GossipController {
     return service.findAll();
   }
 
+  @GetMapping("/{id}")
+  public Gossip findById(@PathVariable int id) {
+    return service.findById(id);
+  }
   @PostMapping
   public ResponseEntity<Object> add(@RequestBody Gossip gossip) {
     Result<Gossip> result = service.add(gossip);

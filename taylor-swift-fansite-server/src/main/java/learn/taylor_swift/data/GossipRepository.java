@@ -13,4 +13,6 @@ public interface GossipRepository {
     boolean update(Gossip gossip);
 
     boolean deleteByKey(int id);
+
+    Gossip findById(int id);
 }

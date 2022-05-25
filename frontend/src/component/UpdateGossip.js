@@ -5,7 +5,7 @@ import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-function UpdateSong() {
+function UpdateGossip() {
   const [deets, setDeets] = useState('');
   const [errors, setErrors] = useState([]);
   const [init, setInit] = useState(false);
@@ -48,7 +48,7 @@ function UpdateSong() {
       const handleSubmit = (event) => {
         event.preventDefault();
     
-        const updateSong = {
+        const updateGossip = {
             id: id,
             deets
         };
@@ -59,7 +59,7 @@ function UpdateSong() {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${localStorage.getItem('jwt_token')}`
           },
-          body: JSON.stringify(updateSong)
+          body: JSON.stringify(updateGossip)
         };
     
         fetch(`http://localhost:8080/api/gossip/${id}`, init)
@@ -109,4 +109,4 @@ function UpdateSong() {
 
 }
 
-export default UpdateSong;
+export default UpdateGossip;
