@@ -98,9 +98,9 @@ function AddSong() {
           <input className="form-control" type="number" id="releaseYear" name="releaseYear" value={releaseYear} onChange={handleReleaseYearChange} ></input>
         </div>
         <div className="form-group">
-          <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Add FieldAgent</button>
+          <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Add Song</button>
           &nbsp;
-          <button className="btn btn-secondary" type="button" onClick={() => history.push('/agents')}>Cancel</button>
+          <button className="btn btn-secondary" type="button" onClick={() => history.push('/songs')}>Cancel</button>
         </div>
       </form>
       <Errors errors={errors}/>
