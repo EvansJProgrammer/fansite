@@ -1,8 +1,12 @@
 import NavBar from "./component/Navbar";
-import FieldAgents from "./component/Song";
-import Add from "./component/AddSong";
-import Update from "./component/UpdateSong";
-import Delete from "./component/DeleteSong";
+import Song from "./component/Song";
+import AddSong from "./component/AddSong";
+import UpdateSong from "./component/UpdateSong";
+import DeleteSong from "./component/DeleteSong";
+import Gossip from "./component/Gossip";
+import AddGossip from "./component/AddGossip"
+import UpdateGossip from "./component/UpdateGossip";
+import DeleteGossip from "./component/DeleteGossip";
 import NotFound from "./component/NotFound";
 import Login from "./component/Login";
 import AuthContext from "./AuthContext";
@@ -55,21 +59,36 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+
             <Route exact path="/about">
               <About />
             </Route>
 
-            <Route exact path="/songs" >
-              <FieldAgents />
+
+            <Route exact path="/gossips" >
+              <Gossip />
             </Route>
-            <Route exact path="/songs/add" >
-              {authManager.user ? <Add /> : <Redirect to="/login" /> }
+            <Route exact path="/gossips/add" >
+              {authManager.user ? <AddGossip /> : <Redirect to="/login" /> }
             </Route>
-            <Route exact path="/songs/edit/:id" >
-              {authManager.user ? <Update />  : <Redirect to="/login" /> }
+            <Route exact path="/gossips/edit/:id" >
+              {authManager.user ? <UpdateGossip />  : <Redirect to="/login" /> }
             </Route>
             <Route exact path="/songs/delete/:id" >
-              {authManager.hasRole('admin')  ? <Delete />  : <Redirect to="/login" /> }
+              {authManager.hasRole('admin')  ? <DeleteGossip />  : <Redirect to="/login" /> }
+            </Route>
+
+            <Route exact path="/songs" >
+              <Song />
+            </Route>
+            <Route exact path="/songs/add" >
+              {authManager.user ? <AddSong /> : <Redirect to="/login" /> }
+            </Route>
+            <Route exact path="/songs/edit/:id" >
+              {authManager.user ? <UpdateSong />  : <Redirect to="/login" /> }
+            </Route>
+            <Route exact path="/songs/delete/:id" >
+              {authManager.hasRole('admin')  ? <DeleteSong />  : <Redirect to="/login" /> }
             </Route>
             <Route exact path="/login" >
               {authManager.user ? <Redirect to="/" /> : <Login />}

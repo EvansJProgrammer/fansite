@@ -2,7 +2,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from '../AuthContext';
 
-function DeleteSong() {
+function DeleteGossip() {
     const [deets, setDeets] = useState('');
     const [init, setInit] = useState(false);
 

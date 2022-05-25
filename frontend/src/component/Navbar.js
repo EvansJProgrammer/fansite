@@ -19,10 +19,10 @@ function NavBar() {
             <Link className="nav-link" to="/">Home</Link>
           </li>
           <li className="nav-item" >
-            <Link className="nav-link" to="/about">Gossip</Link>
+            <Link className="nav-link" to="/gossips">Gossip</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/agents">T-Swift Songs</Link>
+            <Link className="nav-link" to="/songs">T-Swift Songs</Link>
           </li>
           {authManager.user ? (
             <li className="nav-item">

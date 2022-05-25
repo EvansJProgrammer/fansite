@@ -16,7 +16,7 @@ function UpdateSong() {
   
   // Variable Handling
   const handleDeetsChange = (event) => {
-    setTitle(event.target.value);
+    setDeets(event.target.value);
   }
 
   // End of Variable Handling
@@ -93,7 +93,7 @@ function UpdateSong() {
       <h2 className="mt-5">Update Gossip</h2>
       <form>
         <div className="form-group">
-          <label htmlFor="title">Gossip Name:</label>
+          <label htmlFor="deets">Gossip Name:</label>
           <input className="form-control" type="text" id="deets" name="deets" value={deets} onChange={handleDeetsChange} ></input>
         </div>
         <div className="form-group">
