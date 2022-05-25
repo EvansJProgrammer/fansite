@@ -55,3 +55,16 @@ insert into app_user_role
     values
     (1, 2),
     (2, 1);
+    
+    
+insert into song (title,length,youTubeUrl,spotifyUrl,releaseYear) 
+values
+("Bad Blood", "3:30", "testUrl.com", "testSpotifyUrl.com",2019),
+("I Knew You Were Trouble", "3:40", "testUrl.com", "testSpotifyUrl.com", 2018),
+("You Belong With Me", "3:20", "testUrl.com", "testSpotifyUrl.com", 2014);
+
+insert into gossip (deets)
+values
+("Taylor wrote Bad Blood about Kim Kardashian"),
+("Taylor dated Taylor Lautner");
+    
