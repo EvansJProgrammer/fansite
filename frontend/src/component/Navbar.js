@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../AuthContext";
+import './Nav.css';
 
 function NavBar() {
 
@@ -12,6 +13,7 @@ function NavBar() {
 
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+      <div className="container-fluid">
       <span className="navbar-brand" >T-Swift</span>
       <div className="navbar-collapse">
         <ul className="navbar-nav mr-auto">
@@ -42,6 +44,7 @@ function NavBar() {
         </ul>
       </div>
       {authManager.user ? <span className="text-light navbar-text">Hello, {authManager.user}</span> : null}
+      </div>
     </nav>
   );
 }
