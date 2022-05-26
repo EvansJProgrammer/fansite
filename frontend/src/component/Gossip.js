@@ -53,16 +53,17 @@ function Gossip() {
         </thead>
         <tbody>
           {gossip.map((fa, i) => (
-            <tr key={fa.id}>
+            <tr key={fa.id} className="card mb-4">
               <td>
                 {fa.deets}
               </td>
               <td>
               &nbsp;
                 {authManager.user ? (<>
-                  <button className="btn btn-warning" type="button" onClick={() => handleEditSelect(fa)} >Edit</button>
+                  {authManager.hasRole('admin') ? <button className="btn btn-danger float-right" type="button" onClick={() => handleDeleteSelect(fa)} >Delete</button> : null }
+                  <button className="btn btn-warning float-right" type="button" onClick={() => handleEditSelect(fa)} >Edit</button>
                   &nbsp;
-                  {authManager.hasRole('admin') ? <button className="btn btn-danger" type="button" onClick={() => handleDeleteSelect(fa)} >Delete</button> : null }
+                  
                 </>) : null}
               </td>
             </tr>
