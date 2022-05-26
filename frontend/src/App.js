@@ -1,5 +1,6 @@
 import NavBar from "./component/Navbar";
 import Home from "./component/Home";
+import Photos from"./component/Photos";
 import Song from "./component/Song";
 import AddSong from "./component/AddSong";
 import UpdateSong from "./component/UpdateSong";
@@ -61,10 +62,9 @@ function App() {
               <Home />
             </Route>
 
-            <Route exact path="/about">
-              <About />
+            <Route exact path="/photos">
+              <Photos />
             </Route>
-
 
             <Route exact path="/gossips" >
               <Gossip />
@@ -91,6 +91,7 @@ function App() {
             <Route exact path="/songs/delete/:id" >
               {authManager.hasRole('admin')  ? <DeleteSong />  : <Redirect to="/login" /> }
             </Route>
+
             <Route exact path="/login" >
               {authManager.user ? <Redirect to="/" /> : <Login />}
             </Route>
