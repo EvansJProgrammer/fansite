@@ -1,0 +1,94 @@
+#main {
+  margin: auto;
+  width: 700px;
+  font-family: "Poor Story", "comic sans ms", cursive;
+}
+
+@keyframes taylorswift {
+  50% {
+    color: #b603fc;
+  }
+}
+
+#title {
+  margin: auto;
+  font-size: 6em;
+  color: #ff00ff;
+  background-color: #ffffff;
+  text-align: center;
+  animation-name: taylorswift;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+#img-div {
+  background-color: #ff00ff;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+#img-heading {
+}
+
+#image {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: auto;
+}
+#img-caption {
+}
+
+@keyframes ready {
+  100% {
+    font-weight: bold;
+    color: #ff00ff;
+    background-color: #ffffff;
+    text-align: center;
+    opacity: 0.8;
+  }
+}
+#img-div:hover {
+  animation-name: ready;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+#tribute-info {
+  font-size: 20px;
+  color: #5743ca;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+#discography {
+  text-align: left;
+}
+
+#tours {
+  text-align: left;
+}
+
+#footer {
+  text-align: center;
+  background-color: #ff00ff;
+}
+
+a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+li:hover {
+  font-weight: bold;
+  color: #ff00ff;
+  cursor: default;
+}

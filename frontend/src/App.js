@@ -67,6 +67,7 @@ function App() {
               <Photos />
             </Route>
 
+
             <Route exact path="/videos">
               <YouTubePlaylist />
             </Route>
@@ -108,20 +109,6 @@ function App() {
       </AuthContext.Provider>) : null}
     </div>
   );
-}
-
-function About() {
-  return (
-    <>
-      <h2>About</h2>
-      <div>
-        <p>About the Creator</p>
-        <ul>
-          <li>Everything you need to know about our main girl!.</li>
-        </ul>
-      </div>
-    </>
-  )
 }
 
 

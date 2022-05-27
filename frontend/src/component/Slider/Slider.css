@@ -24,7 +24,7 @@
   object-fit: cover;
 }
 .active-anim {
-  opacity: 1;
+  opacity: 3;
 }
 
 .btn-slide {
