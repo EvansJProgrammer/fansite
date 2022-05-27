@@ -17,6 +17,7 @@ import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import jwtDecode from "jwt-decode";
+import YouTubePlaylist from "./component/YouTubePlaylist";
 
 const TOKEN = 'jwt_token';
 
@@ -64,6 +65,10 @@ function App() {
 
             <Route exact path="/photos">
               <Photos />
+            </Route>
+
+            <Route exact path="/videos">
+              <YouTubePlaylist />
             </Route>
 
             <Route exact path="/gossips" >

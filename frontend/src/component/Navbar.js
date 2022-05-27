@@ -29,6 +29,10 @@ function NavBar() {
           <li className="nav-item">
             <Link className="nav-link" to="/songs">T-Swift Songs</Link>
           </li>
+
+          <li className="nav-item">
+            <Link className="nav-link" to="/videos">Videos</Link>
+          </li>
           {authManager.user ? (
             <li className="nav-item">
               <button className="btn btn-secondary" type="button" onClick={handleLogout}>Logout</button>
