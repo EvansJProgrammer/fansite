@@ -9,9 +9,11 @@ import Gossip from "./component/Gossip";
 import AddGossip from "./component/AddGossip"
 import UpdateGossip from "./component/UpdateGossip";
 import DeleteGossip from "./component/DeleteGossip";
+import Footer from './component/footer';
 import NotFound from "./component/NotFound";
 import Login from "./component/Login";
 import AuthContext from "./AuthContext";
+
 
 import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -107,6 +109,7 @@ function App() {
           </Switch>   
         </div>
       </AuthContext.Provider>) : null}
+      <Footer></Footer>
     </div>
   );
 }
