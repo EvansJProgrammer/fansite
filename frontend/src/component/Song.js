@@ -56,6 +56,7 @@ function Song() {
         <tbody>
           {song.map((fa, i) => (
             <tr key={fa.id} className="card m-4 p-4">
+              <img src="albumCover.png" className="img-thumbnail" width="200"></img>
               <td>
                 <span className="font-weight-bold">Title: </span> {fa.title}
               </td>
