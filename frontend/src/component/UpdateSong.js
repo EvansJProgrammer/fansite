@@ -133,7 +133,7 @@ function UpdateSong() {
           <input className="form-control" type="number" id="releaseYear" name="releaseYear" value={releaseYear} onChange={handleReleaseYearChange} ></input>
         </div>
         <div className="form-group">
-          <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Add Song</button>
+          <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Save</button>
           &nbsp;
           <button className="btn btn-secondary" type="button" onClick={() => history.push('/songs')}>Cancel</button>
         </div>

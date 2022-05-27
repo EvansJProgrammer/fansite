@@ -97,7 +97,7 @@ function UpdateGossip() {
           <input className="form-control" type="text" id="deets" name="deets" value={deets} onChange={handleDeetsChange} ></input>
         </div>
         <div className="form-group">
-          <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Add Gossip</button>
+          <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Save Deets</button>
           &nbsp;
           <button className="btn btn-secondary" type="button" onClick={() => history.push('/gossips')}>Cancel</button>
         </div>

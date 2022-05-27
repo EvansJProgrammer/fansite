@@ -46,21 +46,27 @@ function Song() {
       <h2 className="mt-5">Song List</h2>
       {authManager.user ? <button className="btn btn-primary mb-3 mt-4" type="button" onClick={handleAddSelect}>Add Song</button> : null}
       <table className="table table-sm">
-        <thead>
+        {/* <thead>
           <tr>
             <th scope="col">Title</th>
             <th scope="col">Length</th>
             <th scope="col">Modify</th>
           </tr>
-        </thead>
+        </thead> */}
         <tbody>
           {song.map((fa, i) => (
-            <tr key={fa.id}>
+            <tr key={fa.id} className="card m-4 p-4">
               <td>
-                {fa.title + " " + fa.length + " " + fa.releaseYear}
+                <span className="font-weight-bold">Title: </span> {fa.title}
               </td>
               <td>
-                {fa.youTubeUrl}
+                <span className="font-weight-bold">Length: </span>{fa.length}
+              </td>
+              <td>
+                <span className="font-weight-bold">Release Year: </span>{fa.releaseYear}
+              </td>
+              <td>
+                <span className="font-weight-bold">YouTube Url: </span>{fa.youTubeUrl}
               </td>
               <td>
               &nbsp;
